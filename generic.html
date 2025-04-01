@@ -44,7 +44,59 @@
 										With SQL, Python, and Tableau as my trusty sidekicks, I help businesses make sense of their numbers. <br />
 										When I'm not wrangling data, I'm probably automating something just to prove that I can.</p>
 								</header>
-								<div class="image main"><img src="images/Brown Orange Modern Career Path Timeline Mind Map.png" alt="" /></div>
+								<style>
+									.fullscreen-img {
+									  display: none;
+									  position: fixed;
+									  top: 0;
+									  left: 0;
+									  width: 100%;
+									  height: 100%;
+									  background: rgba(0, 0, 0, 0.8);
+									  justify-content: center;
+									  align-items: center;
+									}
+								  
+									.fullscreen-img img {
+									  max-width: 90%;
+									  max-height: 90%;
+									}
+								  
+									.fullscreen-img.active {
+									  display: flex;
+									}
+								  </style>
+								  
+								  <div class="image main">
+									<img id="thumbnail" src="images/Brown Orange Modern Career Path Timeline Mind Map.png" alt="Mind Map" />
+								  </div>
+								  
+								  <div id="lightbox" class="fullscreen-img">
+									<img id="full-img" src="images/Brown Orange Modern Career Path Timeline Mind Map.png" alt="Mind Map" />
+								  </div>
+								  
+								  <script>
+									const lightbox = document.getElementById("lightbox");
+									const thumbnail = document.getElementById("thumbnail");
+								  
+									// Open the lightbox when clicking the image
+									thumbnail.addEventListener("click", function() {
+									  lightbox.classList.add("active");
+									});
+								  
+									// Close the lightbox when clicking anywhere on it
+									lightbox.addEventListener("click", function() {
+									  lightbox.classList.remove("active");
+									});
+								  
+									// Close the lightbox when pressing the ESC key
+									document.addEventListener("keydown", function(event) {
+									  if (event.key === "Escape") {
+										lightbox.classList.remove("active");
+									  }
+									});
+								  </script>
+								  
 							</section>
 
 					</div>
